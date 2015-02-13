@@ -1,0 +1,133 @@
+body {
+    background: url("../img/shattered.png") repeat;
+}
+
+.first-header {
+    height: 70px;
+    background-color: #cccccc;
+    /*text-align: center;*/
+    vertical-align: middle;
+}
+
+.first-header #logo {
+    font-family: 'Racing Sans One', cursive;
+    color: #ca0005;
+    font-size: 36px;
+    font-weight: bold;
+    border: 2px solid #771100;
+    border-radius: 8px;
+    line-height: 70px;
+    /*margin-left: 30px;*/
+    animation: logo 4s infinite;
+    -webkit-animation: logo 4s infinite;
+    margin-left: 20px;
+}
+
+@keyframes logo {
+    0% {
+        color: #771100;
+        border: 2px solid #771100;
+        padding: 5px;
+    }
+    50% {
+        color: #CC6633;
+        border: 2px solid #CC6633;
+        padding: 5px;
+    }
+    100% {
+        color: #FF9900;
+        border: 2px solid #FF9900;
+        padding: 5px;
+    }
+}
+
+@-webkit-keyframes logo {
+    0% {
+        color: #771100;
+        border: 2px solid #771100;
+        padding: 5px;
+    }
+    50% {
+        color: #CC6633;
+        border: 2px solid #CC6633;
+        padding: 5px;
+    }
+    100% {
+        color: #FF9900;
+        border: 2px solid #FF9900;
+        padding: 5px;
+    }
+}
+
+.second-header {
+    height: 40px;
+    background: linear-gradient(#999999, #4c4c4c);
+    border-bottom: 1px solid #333333;
+}
+
+.nav-button {
+    height: 39px;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 39px;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.nav-button:hover {
+    /*border-bottom: 3px solid #ffffff;*/
+    background: linear-gradient(#999999, #222222);
+    color: #fff !important;
+    cursor: default;
+}
+
+.contain-all {
+    border: 1px solid #ffffff;
+    box-shadow: dimgray 0 0 20px;
+    height: auto;
+    margin-top: 40px;
+}
+
+.channel_groups {
+    height: 40px;
+    width: 300px;
+    font-weight: bold;
+    line-height: 40px;
+    vertical-align: middle;
+    background: -webkit-linear-gradient(left, #444444, transparent); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #444444, transparent); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #444444, transparent); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #444444, transparent); /* Standard syntax */
+}
+
+.group_channels {
+    height: auto;
+    /*border: solid 1px black;*/
+    /*background-color: #ffffff;*/
+    display: inline-block;
+    /*overflow-x: scroll;*/
+    /*overflow-y: hidden;*/
+    /*box-sizing: border-box;*/
+}
+
+.group_channels img {
+    max-height: 50px;
+    max-width: 100px;
+    height: 50px;
+    width: 100px;
+    border: 1px solid #444444;
+}
+
+.main-panel {
+    border: 1px solid #ffffff;
+    box-shadow: dimgray 0 0 20px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 45px;
+}
+
+.on-air-info {
+    text-wrap: normal;
+    height: 50px;
+}
