@@ -5,6 +5,12 @@
 
 var myApp = angular.module("AppEntertaiment", ['ui.router']);
 
+myApp.directive('myHeader', function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'directives/header.html'
+    }
+})
 myApp.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise('/index');
 
@@ -15,7 +21,7 @@ myApp.config(function($stateProvider, $urlRouterProvider){
         })
 
         .state('index.play_video', {
-            url: '/play_video',
+            url: '/index/play_video',
             templateUrl: 'views/play_video.html'
         })
 })
