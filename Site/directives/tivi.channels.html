@@ -1,0 +1,15 @@
+<div ng-repeat="group in channel_groups">
+    <div class="row">
+        <div class="col-md-12 channel_groups">{{group.name}}</div>
+        <br>
+    </div>
+    <div class="row col-md-12 center-block group_channels">
+        <div ng-repeat="channel in channels | containid : { targetvalue : group.id }"
+             style="display: inline-block">
+            <a ui-sref-active="active" ui-sref="play_video">
+                <img class="img-responsive img-thumbnail" src="img/logos/{{ channel.id }}.png"
+                     style="max-width: 70px; max-height: 70px;">
+            </a>
+        </div>
+    </div>
+</div>

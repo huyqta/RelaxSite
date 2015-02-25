@@ -10,22 +10,43 @@ myApp.directive('myHeader', function(){
         restrict: 'E',
         templateUrl: 'directives/header.html'
     }
+}).directive('myPrograms', function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'directives/tivi.programs.html'
+    }
+}).directive('myChannels', function(){
+    return{
+        restrict: 'E',
+        templateUrl: 'directives/tivi.channels.html'
+    }
 })
 myApp.config(function($stateProvider, $urlRouterProvider){
     $urlRouterProvider.otherwise('/index');
 
     $stateProvider
+        .state('tivi', {
+            url: 'tivi',
+            templateUrl: 'templates/tivi/index.html'
+        })
         .state('index',{
             url: '/index',
-            templateUrl: 'views/home.html'
+            templateUrl: 'templates/movie/index.html'
         })
-
-        .state('index.home', {
-            url: '/index/home',
-            templateUrl: 'directives/list_programs.html'
+        .state('movie',{
+            url: '/movie',
+            templateUrl: 'templates/movie/index.html'
         })
-        .state('index.play_video', {
-            url: '/index/play_video',
-            templateUrl: 'views/play_video.html'
+        .state('music',{
+            url: '/music',
+            templateUrl: 'templates/music/index.html'
+        })
+        .state('radio',{
+            url: '/radio',
+            templateUrl: 'templates/radio/index.html'
+        })
+        .state('play_video', {
+            url: '/play_video',
+            templateUrl: 'templates/play_video.html'
         });
 })
