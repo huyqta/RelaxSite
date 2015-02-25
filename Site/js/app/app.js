@@ -23,5 +23,5 @@ myApp.config(function($stateProvider, $urlRouterProvider){
         .state('index.play_video', {
             url: '/index/play_video',
             templateUrl: 'views/play_video.html'
-        })
+        });
 })
