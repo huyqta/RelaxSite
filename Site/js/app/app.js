@@ -20,6 +20,10 @@ myApp.config(function($stateProvider, $urlRouterProvider){
             templateUrl: 'views/home.html'
         })
 
+        .state('index.home', {
+            url: '/index/home',
+            templateUrl: 'directives/list_programs.html'
+        })
         .state('index.play_video', {
             url: '/index/play_video',
             templateUrl: 'views/play_video.html'

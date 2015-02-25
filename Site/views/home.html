@@ -9,7 +9,7 @@
                 <div class="row col-md-12 center-block group_channels">
                     <div ng-repeat="channel in channels | containid : { targetvalue : group.id }"
                          style="display: inline-block">
-                        <a ui-sref-active="active" ui-sref=".index.play_video" class="btn">
+                        <a ui-sref-active="active" ui-sref="index.play_video" class="btn">
                             <img class="img-responsive img-thumbnail" src="img/logos/{{ channel.id }}.png"
                                  style="max-width: 100px; max-height: 100px;">
                         </a>
@@ -18,74 +18,7 @@
             </div>
         </div>
         <div class="row col-md-8 main-panel">
-            <div class="col-md-6">
-                <table class="table table-responsive">
-                    <thead>
-                    <th>
-
-                    </th>
-                    <th>
-                        <span>Chuong trinh dang chieu</span>
-                    </th>
-
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="program in programs_on_air">
-                        <td>
-                            <img class="img-responsive img-thumbnail" src="img/logos/{{ program.refchannel }}.png"
-                                 style="width: 100px; height: 50px; display: inline-block;">
-                        </td>
-                        <td>
-                            <div class="on-air-info" style="display: inline-block;">
-                                <p>
-
-                                <h5><strong>{{program.name}}</strong></h5></p>
-                                <p>
-
-                                <h5><em>{{program.datestart}}&nbsp{{program.timestart}}</em></h5></p>
-                            </div>
-                        </td>
-                        <td>
-
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-                <table class="table table-responsive">
-                    <thead>
-                    <th>
-
-                    </th>
-                    <th>
-                        <span>Chuong trinh sap chieu</span>
-                    </th>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="program in programs_up_next">
-                        <td>
-                            <img class="img-responsive img-thumbnail" src="img/logos/{{ program.refchannel }}.png"
-                                 style="width: 100px; height: 50px; display: inline-block;">
-                        </td>
-                        <td>
-                            <div class="on-air-info" style="display: inline-block;">
-                                <p>
-
-                                <h5><strong>{{program.name}}</strong></h5></p>
-                                <p>
-
-                                <h5><em>{{program.datestart}}&nbsp{{program.timestart}}</em></h5></p>
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-4 center-block">
-                <span>Chuong trinh sap chieu</span>
-            </div>
+            <div ui-view></div>
         </div>
-
     </div>
 </section>
