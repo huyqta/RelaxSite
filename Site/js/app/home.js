@@ -11,6 +11,7 @@ myApp.controller("IndexController", ['$scope', 'dataFactory', function ($scope, 
     $scope.programs_on_air;
     $scope.programs_up_next;
     $scope.status;
+    $scope.program_by_channel;
 
     dataFactory.getAllChannelGroups().then(function (data) {
         $scope.channel_groups = data;
@@ -26,6 +27,10 @@ myApp.controller("IndexController", ['$scope', 'dataFactory', function ($scope, 
 
     dataFactory.getProgramsUpNext().then(function (data) {
         $scope.programs_up_next = data;
+    });
+
+    dataFactory.getProgramsByChannel().then(function (data) {
+        $scope.program_by_channel = data;
     });
 }])
 
@@ -64,6 +69,15 @@ myApp.factory("dataFactory", ['$http', function ($http, $filter) {
 
     dataFactory.getProgramsUpNext = function () {
         return $http.get("http://huyqta.esy.es/index.php/api/programs/GetNextPrograms/2015-02-02/6:00/1/0/format/json").then(function (data) {
+            return data.data;
+        }, function (error) {
+            console.log(error);
+            return [];
+        });
+    }
+
+    dataFactory.getProgramsByChannel = function(){
+        return $http.get("http://huyqta.esy.es/index.php/api/programs/GetProgramsByChannel/2015-02-02/6:00/1/0/format/json").then(function (data) {
             return data.data;
         }, function (error) {
             console.log(error);
