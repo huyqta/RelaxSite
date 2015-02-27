@@ -5,23 +5,23 @@
 
 var myApp = angular.module("AppEntertaiment", ['ui.router']);
 
-myApp.directive('myHeader', function(){
-    return{
+myApp.directive('myHeader', function () {
+    return {
         restrict: 'E',
         templateUrl: 'directives/header.html'
     }
-}).directive('myPrograms', function(){
-    return{
+}).directive('myPrograms', function () {
+    return {
         restrict: 'E',
         templateUrl: 'directives/tivi.programs.html'
     }
-}).directive('myChannels', function(){
-    return{
+}).directive('myChannels', function () {
+    return {
         restrict: 'E',
         templateUrl: 'directives/tivi.channels.html'
     }
 })
-myApp.config(function($stateProvider, $urlRouterProvider){
+myApp.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/index');
 
     $stateProvider
@@ -29,24 +29,25 @@ myApp.config(function($stateProvider, $urlRouterProvider){
             url: 'tivi',
             templateUrl: 'templates/tivi/index.html'
         })
-        .state('index',{
+        .state('index', {
             url: '/index',
             templateUrl: 'templates/movie/index.html'
         })
-        .state('movie',{
+        .state('movie', {
             url: '/movie',
             templateUrl: 'templates/movie/index.html'
         })
-        .state('music',{
+        .state('music', {
             url: '/music',
             templateUrl: 'templates/music/index.html'
         })
-        .state('radio',{
+        .state('radio', {
             url: '/radio',
             templateUrl: 'templates/radio/index.html'
         })
         .state('play_video', {
-            url: '/play_video',
-            templateUrl: 'templates/play_video.html'
-        });
+            url: '/play_video/:cid',
+            templateUrl: 'templates/play_video.html',
+            controller: "tiviController"
+        })
 })

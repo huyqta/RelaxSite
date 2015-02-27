@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" ng-controller="tiviController">
     <div class="row">
         <div class="row col-md-3 main-panel">
             <div ng-repeat="group in channel_groups">
@@ -9,7 +9,7 @@
                 <div class="row col-md-12 center-block group_channels">
                     <div ng-repeat="channel in channels | containid : { targetvalue : group.id }"
                          style="display: inline-block">
-                        <a ui-sref-active="active" ui-sref="index.play_video" class="btn">
+                        <a ui-sref-active="active" ui-sref="index.play_video({ cid: 11 })" class="btn">
                             <img class="img-responsive img-thumbnail" src="img/logos/{{ channel.id }}.png"
                                  style="max-width: 100px; max-height: 100px;">
                         </a>
